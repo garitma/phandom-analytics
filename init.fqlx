@@ -1,10 +1,16 @@
 Collection.create({ name: "Visit" })
 Collection.create({ name: "Site" })
 
+Site.definition.update({
+  constraints: [
+    { unique: [ "code" ] }
+  ]
+})
+
 Visit.definition.update({
   indexes: {
-    byTime: {
-      values: [{ field: "time" }]
-    }
-  }
+    "byTime": {
+      "terms": [{"field":"site"}],
+      "values": [{"field":"time","order":"asc"}]
+    }},
 })

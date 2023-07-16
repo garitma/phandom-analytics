@@ -1,0 +1,9 @@
+Collection.create({ name: "Visit" })
+
+Visit.definition.update({
+  indexes: {
+    byTime: {
+      values: [{ field: "time" }]
+    }
+  }
+})

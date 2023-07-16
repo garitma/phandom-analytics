@@ -23,15 +23,16 @@ export const load = (siteId: string, config: LoadConfig): void => {
   currentSiteId = siteId;
   secret = config.accessToken;
   includedDomains = config.includedDomains;
+  userAgent = `${navigator.userAgent}`;
 
   if (!isLoaded) {
     trackPageview();
     isLoaded = true;
-    userAgent = navigator.userAgent;
   }
 };
 
 export async function trackPageview() {
+
   try {
     const currentDomain = window.location.hostname;
     if (!includedDomains.includes(currentDomain)) {
@@ -42,10 +43,11 @@ export async function trackPageview() {
       Visit.create({ 
         url: ${window.location.pathname}, 
         time: Time.now(), 
-        userAgent: ${userAgent}
+        userAgent: ${userAgent},
         site: ${currentSiteId} 
       })
     `;
+
     await client(secret).query(document_query);
   } catch (error) {
     console.log(error);

@@ -1,13 +1,22 @@
 {
-    "compilerOptions": {
-      "target": "ES6",
-      "declaration": true,
-      "declarationDir": "dist",
-      "strict": true,
-      "isolatedModules": true,
-      "strictNullChecks": false,
-      "moduleResolution": "node"
-    },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "dist"]
-  }
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "declaration": true,
+    "moduleResolution": "node",
+    "outDir": "dist/",
+    "jsx": "react-jsx",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": false,
+    "skipLibCheck": true,
+  },
+  "include": ["packages/client"],
+  "exclude": ["node_modules", "dist"]
+}

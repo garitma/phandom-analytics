@@ -1,4 +1,5 @@
 Collection.create({ name: "Visit" })
+Collection.create({ name: "Site" })
 
 Visit.definition.update({
   indexes: {

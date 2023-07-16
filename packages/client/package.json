@@ -5,7 +5,7 @@
   "keywords": [],
   "author": "Pablo Orozco <me@pablopvsky.com",
   "license": "MIT",
-  "main": "index.ts",
+  "main": "dist",
   "homepage": "git@github.com:garitma/phandom-analytics.git/#readme",
   "files": [
     "index.ts",

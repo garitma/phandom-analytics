@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import "@aura-design/system/main.css";
 import "nprogress/nprogress.css";
 import { useRouter } from "next/router";
-import * as Panthom from "phantom-client/dist";
+import * as Panthom from "phantom-client";
 
 import "@/styles/main.css";
 import "@/styles/global.css";

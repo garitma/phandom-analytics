@@ -14,3 +14,5 @@ Visit.definition.update({
       "values": [{"field":"time","order":"asc"}]
     }},
 })
+
+Site.create({ code: "", domain: "" })
